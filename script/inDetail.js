@@ -11,7 +11,7 @@ icon.onclick = function(){
   if (body.classList.contains('dark-theme')) {
     modeImg.setAttribute("src","../icons/sun.png")
   }else{
-    modeImg.setAttribute("src","../icons/moon.png")
+    modeImg.setAttribute("src","../icons/sun.png")
     
   }
 }
