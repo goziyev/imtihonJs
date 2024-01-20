@@ -1,35 +1,46 @@
 import { createCard } from "./function.js";
 const mainInput  = document.getElementById('main-input');
-const toggle = document.querySelector('.toggle')
 const wrapper = document.getElementById("cards-wrapper");
 const filterRegion = document.getElementById('filter_select');
+const search = document.querySelector('.search')
+const header = document.getElementById('header')
+const body = document.querySelector('body');
 
-toggle && toggle.addEventListener('click',e =>{
-  toggle.setAttribute('class','dark-mode')
-  if (toggle.getAttribute('class') == "dark-mode") {
-    document.body.style.background = "green"
+
+let icon  = document.querySelector('.mode');
+icon.onclick = function(){
+  body.classList.toggle("dark-theme");
+  if (body.classList.contains('dark-theme')) {
+    modeImg.setAttribute("src","../icons/sun.png")
+  }else{
+    modeImg.setAttribute("src","../icons/moon.png")
+    
   }
-})
+}
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
   fetch("https://countries-api-v7sn.onrender.com/countries?limit=250",{
     method:"GET"
   })
-    .then((res) => res.json())
-    .then((data) => {
+  .then((res) => res.json())
+  .then((data) => {
       data.data.forEach(element => {
-
+        
         let card = createCard(element);
         wrapper.innerHTML += card
       });
       const cards = document.querySelectorAll(".card");
       cards.forEach(el => {
-          el.addEventListener("click", function () {
-              let elId = this.getAttribute("id");
-                  window.location.assign(`./pages/detail.html?id${elId}`);
-          });
+        el.addEventListener("click", function () {
+          let elId = this.getAttribute("id");
+          window.location.assign(`./pages/detail.html?id${elId}`);
+        });
       });
+      
+      
+     
       
       
     })
@@ -95,4 +106,3 @@ filterRegion.addEventListener('change',myfilterScript)
 
 
 
-  

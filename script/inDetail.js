@@ -2,6 +2,22 @@ import { createCardDetail } from "./function.js";
 let main = document.getElementById("main");
 let back = document.getElementById("back");
 
+const body = document.querySelector('body');
+const modeImg = document.querySelector('.mode-img')
+
+let icon  = document.querySelector('.mode');
+icon.onclick = function(){
+  body.classList.toggle("dark-theme")
+  if (body.classList.contains('dark-theme')) {
+    modeImg.setAttribute("src","../icons/sun.png")
+  }else{
+    modeImg.setAttribute("src","../icons/moon.png")
+    
+  }
+}
+
+
+
 back &&
   back.addEventListener("click", function () {
     window.location.assign("../index.html");

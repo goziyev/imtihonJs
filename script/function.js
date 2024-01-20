@@ -18,14 +18,14 @@ function createCard(element) {
 function createCardDetail(element) {
   return `
     <div class="in-detail container" id="in-detail-wrapper">
-    <div class="indetail_img">
-        <img src=${element.flags.png} width="559" height="483" alt=${
+    <div >
+        <img class="indetail_img" src=${element.flags.png} alt=${
     element.flags.alt
   } >
     </div>
     <div class="in-detail__texts">
-        <h1>${element.name.common}</h1>
-        <div class="in-detail-flex">
+    <h1>${element.name.common}</h1>
+    <div class="in-detail-flex">
             <div>
                 <p class="card-description fonts">Native Name: <span>${
                   element.name.nativeName
