@@ -70,4 +70,5 @@ function createCardDetail(element) {
 }
 
 
+
 export { createCard, createCardDetail };
