@@ -4,6 +4,19 @@ let back = document.getElementById("back");
 
 const body = document.querySelector('body');
 const modeImg = document.querySelector('.mode-img')
+const mainLoader  = document.querySelector(".main-loader")
+const loader  = document.querySelector(".loader")
+
+
+mainLoader.style.display= "none";
+
+function loaderCallback() {
+loader.style.display= "none";
+mainLoader.style.display= "block";
+}
+
+
+
 
 let icon  = document.querySelector('.mode');
 icon.onclick = function(){
@@ -46,6 +59,7 @@ document
                });
            });
        }
+       loaderCallback();
       })
     //   .catch(window.location.assign("../index.html"));
     
